@@ -26,11 +26,8 @@
             margin-bottom: 30px;
         }
         .buttons {
-            position: relative;
-            width: 100%;
-            max-width: 300px;
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
         }
         button {
             padding: 10px 20px;
@@ -39,6 +36,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
         }
         #sim {
             background-color: #4caf50;
@@ -47,7 +45,6 @@
         #nao {
             background-color: #f44336;
             color: white;
-            position: absolute;
         }
         canvas {
             position: fixed;
@@ -83,6 +80,7 @@
             const novaPosY = Math.random() * alturaMax;
 
             // Aplica as novas posições
+            nao.style.position = "absolute";
             nao.style.left = `${novaPosX}px`;
             nao.style.top = `${novaPosY}px`;
         }
