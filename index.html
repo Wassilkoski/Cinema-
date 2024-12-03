@@ -65,29 +65,35 @@
     <p>Gostaria de te convidar para ir ao cinema comigo. Aceita?</p>
     <div class="buttons">
         <button id="sim" onclick="aceitou()">Sim</button>
-        <button id="nao" onmouseover="mover()">Não</button>
+        <button id="nao" onclick="mover()" onmouseover="mover()">Não</button>
     </div>
     <canvas id="fireworks"></canvas>
     <script>
+        // Função para mover o botão "Não"
         function mover() {
             const nao = document.getElementById("nao");
             const container = document.body;
 
+            // Obtém as dimensões da tela
             const larguraMax = container.offsetWidth - nao.offsetWidth;
             const alturaMax = container.offsetHeight - nao.offsetHeight;
 
+            // Gera posições aleatórias
             const novaPosX = Math.random() * larguraMax;
             const novaPosY = Math.random() * alturaMax;
 
+            // Aplica as novas posições
             nao.style.left = `${novaPosX}px`;
             nao.style.top = `${novaPosY}px`;
         }
 
+        // Função para mostrar fogos de artifício
         function aceitou() {
             alert("Que ótimo, Laura! Vou marcar os detalhes e te aviso! 😊");
             startFireworks();
         }
 
+        // Lógica para fogos de artifício
         const canvas = document.getElementById("fireworks");
         const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
@@ -148,4 +154,3 @@
     </script>
 </body>
 </html>
-
